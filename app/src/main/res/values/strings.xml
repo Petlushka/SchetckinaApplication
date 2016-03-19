@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SchetckinaApplication</string>
+    <string name="create">Create</string>
+    <string name="create_date">25 February 2016</string>
+    <string name="decide">Decide by</string>
+    <string name="decide_date">29 February 2016</string>
+    <string name="description">There is open hatch (near a billboard) at the turn of 18 and 19  tramways  on Mira avenue from the Donetskoe highway.</string>
+    <string name="organization">Communal economy</string>
+    <string name="register">Register</string>
+    <string name="register_date">26 February 2016</string>
+    <string name="responsible">Responsible</string>
+    <string name="responsible_organization">Dnepropetrovsk CEC()</string>
+    <string name="status">At work</string>
+    <string name="action_settings">Settings</string>
+</resources>

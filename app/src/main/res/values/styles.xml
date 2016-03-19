@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:logo">@string/app_name</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TextHeader">
+        <item name="android:textSize">@dimen/text_header</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="StatusTextView">
+        <item name="android:background">@drawable/status_text</item>
+        <item name="android:paddingLeft">@dimen/text_padding_left_right</item>
+        <item name="android:paddingBottom">@dimen/status_padding</item>
+        <item name="android:paddingRight">@dimen/text_padding_left_right</item>
+        <item name="android:paddingTop">@dimen/status_padding</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginTop">@dimen/text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/text_margin</item>
+    </style>
+
+    <style name="TextTheme">
+        <item name="android:paddingBottom">@dimen/text_padding_top_bottom</item>
+        <item name="android:paddingTop">@dimen/text_padding_top_bottom</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:alignmentMode">alignBounds</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
