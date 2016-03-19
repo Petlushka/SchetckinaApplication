@@ -10,8 +10,9 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by Irina on 15.03.2016.
+ * Adapter for RecycleView
  */
+
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleViewHolder> {
 
     private int [] recycle_images;
@@ -36,7 +37,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
     public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = new ImageView(context);
         int padding = (int)context.getResources().getDimension(R.dimen.image_padding);
-        v.setPadding(padding, 0, padding, 0);
+        v.setPadding(0, 0, padding, 0);
         RecycleViewHolder viewHolder = new RecycleViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
             @Override
