@@ -15,12 +15,12 @@ import com.squareup.picasso.Picasso;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleViewHolder> {
 
-    private int [] mRecycle_images;
+    private int [] mRecycle_images; //[Comment] Wrong name. Don't use "_" in object names
     private Context mContext;
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView picture;
+        ImageView picture; // [Comment] Wrong name and visibility modifier
 
         public RecycleViewHolder(View itemView) {
             super(itemView);
@@ -37,7 +37,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
     public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = new ImageView(mContext);
         int padding = (int)mContext.getResources().getDimension(R.dimen.image_padding);
-        v.setPadding(0, 0, padding, 0);
+        v.setPadding(0, 0, padding, 0);  // [Comment] Try to use item decorator instead of padding
         RecycleViewHolder viewHolder = new RecycleViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+//[Comment] Wrong toolbar and status bar color
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            System.exit(0);
+            System.exit(0); //[Comment] NEVER use System.exit() in Android Applications
             return true;
         }
 
