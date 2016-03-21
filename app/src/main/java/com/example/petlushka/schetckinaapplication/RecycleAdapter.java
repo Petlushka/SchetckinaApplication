@@ -15,8 +15,8 @@ import com.squareup.picasso.Picasso;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleViewHolder> {
 
-    private int [] recycle_images;
-    Context context;
+    private int [] mRecycle_images;
+    private Context mContext;
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder{
 
@@ -29,20 +29,20 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
     }
 
     public RecycleAdapter(Context context, int[] recycle_images) {
-        this.recycle_images = recycle_images;
-        this.context = context;
+        this.mRecycle_images = recycle_images;
+        this.mContext = context;
     }
 
     @Override
     public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = new ImageView(context);
-        int padding = (int)context.getResources().getDimension(R.dimen.image_padding);
+        View v = new ImageView(mContext);
+        int padding = (int)mContext.getResources().getDimension(R.dimen.image_padding);
         v.setPadding(0, 0, padding, 0);
         RecycleViewHolder viewHolder = new RecycleViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, v.getClass().getSimpleName(), Toast.LENGTH_SHORT).show();
             }
         });
         return viewHolder;
@@ -55,11 +55,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
 
     @Override
     public void onBindViewHolder(RecycleViewHolder holder, int position) {
-        Picasso.with(context).load(recycle_images[position]).into(holder.picture);
+        Picasso.with(mContext).load(mRecycle_images[position]).into(holder.picture);
     }
 
     @Override
     public int getItemCount() {
-        return recycle_images.length;
+        return mRecycle_images.length;
     }
 }
