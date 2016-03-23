@@ -15,29 +15,27 @@ import com.squareup.picasso.Picasso;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleViewHolder> {
 
-    private int [] mRecycle_images;
+    private int [] mRecycleImages;
     private Context mContext;
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView picture;
+        private ImageView mViewHolderImage;
 
         public RecycleViewHolder(View itemView) {
             super(itemView);
-            picture = (ImageView)itemView;
+            mViewHolderImage = (ImageView)itemView;
         }
     }
 
     public RecycleAdapter(Context context, int[] recycle_images) {
-        this.mRecycle_images = recycle_images;
+        this.mRecycleImages = recycle_images;
         this.mContext = context;
     }
 
     @Override
     public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = new ImageView(mContext);
-        int padding = (int)mContext.getResources().getDimension(R.dimen.image_padding);
-        v.setPadding(0, 0, padding, 0);
         RecycleViewHolder viewHolder = new RecycleViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +53,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
 
     @Override
     public void onBindViewHolder(RecycleViewHolder holder, int position) {
-        Picasso.with(mContext).load(mRecycle_images[position]).into(holder.picture);
+        Picasso.with(mContext).load(mRecycleImages[position]).into(holder.mViewHolderImage);
     }
 
     @Override
     public int getItemCount() {
-        return mRecycle_images.length;
+        return mRecycleImages.length;
     }
 }

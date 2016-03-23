@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycleView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.addItemDecoration(new VerticalItemDecoration((int) this.getResources().getDimension(R.dimen.image_padding)));
         RecycleAdapter adapter = new RecycleAdapter(this, new int [] {R.drawable.foto1, R.drawable.foto2, R.drawable.foto3});
         recyclerView.setAdapter(adapter);
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            System.exit(0);
+            this.finish();
             return true;
         }
 
