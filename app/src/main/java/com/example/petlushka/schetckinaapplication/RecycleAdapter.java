@@ -51,6 +51,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+
+
     @Override
     public void onBindViewHolder(RecycleViewHolder holder, int position) {
         Picasso.with(mContext).load(mRecycleImages[position]).into(holder.mViewHolderImage);
