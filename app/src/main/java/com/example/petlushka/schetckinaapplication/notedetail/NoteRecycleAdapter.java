@@ -1,4 +1,4 @@
-package com.example.petlushka.schetckinaapplication;
+package com.example.petlushka.schetckinaapplication.notedetail;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -55,6 +55,7 @@ public class NoteRecycleAdapter extends RecyclerView.Adapter<NoteRecycleAdapter.
 
     @Override
     public void onBindViewHolder(RecycleViewHolder holder, int position) {
+
         Picasso.with(mContext).load(mRecycleImages[position]).into(holder.mViewHolderImage);
     }
 

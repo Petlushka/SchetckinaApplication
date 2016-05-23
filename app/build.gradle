@@ -36,6 +36,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile 'com.google.code.gson:gson:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
-    compile 'io.realm:realm-android:0.83.0+'
+    compile 'io.realm:realm-android:0.83.0'
 
 }
