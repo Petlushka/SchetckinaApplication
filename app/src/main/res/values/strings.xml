@@ -12,4 +12,18 @@
     <string name="responsible_organization">Dnepropetrovsk CEC()</string>
     <string name="status">At work</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="at_work">AT WORK</string>
+    <string name="done">DONE</string>
+    <string name="not_done">NOT DONE</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="e_contact">e-contact</string>
+    <string name="all_issues">All issues</string>
+    <string name="issues_on_the_map">Issues on the map</string>
+    <string name="sign_in">Sign in</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

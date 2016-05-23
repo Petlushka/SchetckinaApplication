@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SchetckinaApplication</string>
-    <string name="action_settings" translatable="false">Settings</string>
     <string name="organization">Комунальне господарство</string>
     <string name="status">В роботі</string>
     <string name="create">Створено</string>

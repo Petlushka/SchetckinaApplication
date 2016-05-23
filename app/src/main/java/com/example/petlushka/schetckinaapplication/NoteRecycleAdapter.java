@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
  * Adapter for RecycleView
  */
 
-public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleViewHolder> {
+public class NoteRecycleAdapter extends RecyclerView.Adapter<NoteRecycleAdapter.RecycleViewHolder> {
 
     private int [] mRecycleImages;
     private Context mContext;
@@ -28,7 +28,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleV
         }
     }
 
-    public RecycleAdapter(Context context, int[] recycle_images) {
+    public NoteRecycleAdapter(Context context, int[] recycle_images) {
         this.mRecycleImages = recycle_images;
         this.mContext = context;
     }
