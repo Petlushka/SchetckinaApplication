@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.petlushka.schetckinaapplication.data.FileName;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 /**
  * Adapter for RecycleView
@@ -15,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class NoteRecycleAdapter extends RecyclerView.Adapter<NoteRecycleAdapter.RecycleViewHolder> {
 
-    private int [] mRecycleImages;
+    private List<FileName> mRecycleImages;
     private Context mContext;
 
     public class RecycleViewHolder extends RecyclerView.ViewHolder{
@@ -28,8 +31,8 @@ public class NoteRecycleAdapter extends RecyclerView.Adapter<NoteRecycleAdapter.
         }
     }
 
-    public NoteRecycleAdapter(Context context, int[] recycle_images) {
-        this.mRecycleImages = recycle_images;
+    public NoteRecycleAdapter(Context context, List<FileName> mRecycleImages) {
+        this.mRecycleImages = mRecycleImages;
         this.mContext = context;
     }
 
@@ -56,11 +59,12 @@ public class NoteRecycleAdapter extends RecyclerView.Adapter<NoteRecycleAdapter.
     @Override
     public void onBindViewHolder(RecycleViewHolder holder, int position) {
 
-        Picasso.with(mContext).load(mRecycleImages[position]).into(holder.mViewHolderImage);
+        Picasso.with(mContext).load("dev-contact.yalantis.com/files/ticket/" +
+                mRecycleImages.get(position).getName()).into(holder.mViewHolderImage);
     }
 
     @Override
     public int getItemCount() {
-        return mRecycleImages.length;
+        return mRecycleImages.size();
     }
 }
