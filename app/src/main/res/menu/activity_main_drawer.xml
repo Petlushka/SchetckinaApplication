@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_issues"
+            android:icon="@drawable/ic_issues"
+            android:title="@string/all_issues" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="@string/issues_on_the_map" />
+    </group>
+    <group android:checkableBehavior="none"
+        android:id="@+id/group_bottom">
+        <item
+            android:title="@string/sign_in"
+            android:id="@+id/nav_sign_in" />
+    </group>
+
+
+
+</menu>

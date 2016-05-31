@@ -115,17 +115,17 @@
                     android:orientation="horizontal"
                     android:weightSum="3">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/responsible"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         style="@style/TextTheme"
                         android:onClick="onClick" />
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/tv_performer"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:textColor="@android:color/black"
                         style="@style/TextTheme"
                         android:onClick="onClick"
