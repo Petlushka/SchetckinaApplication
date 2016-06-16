@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.widget.Toast;
 
 import com.example.petlushka.schetckinaapplication.R;
 
@@ -21,19 +22,8 @@ public class PageAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
         InProgressFragment fragment = new InProgressFragment();
-        switch (position){
-            case 0:
-                fragment.setmType(0);
-                break;
-            case 1:
-                fragment.setmType(1);
-                break;
-            case 2:
-                fragment.setmType(2);
-                break;
-        }
+        fragment.setType(position);
         return fragment;
     }
 

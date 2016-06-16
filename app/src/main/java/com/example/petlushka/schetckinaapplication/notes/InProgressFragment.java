@@ -22,8 +22,13 @@ public class InProgressFragment extends Fragment {
 
     }
 
-    public void setmType(int mType) {
+
+    public void setType(int mType) {
         this.mType = mType;
+    }
+
+    public int getType() {
+        return mType;
     }
 
     @Override
@@ -32,7 +37,7 @@ public class InProgressFragment extends Fragment {
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_in_progress, container, false);
         RecyclerView recyclerView = (RecyclerView)fragmentView.findViewById(R.id.recycle_in_progress);
-        ListNotesRecycleAdapter adapter = new ListNotesRecycleAdapter(getContext(), mType);
+        ListNotesRecycleAdapter adapter = new ListNotesRecycleAdapter(getContext(), getType());
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new HorizontalItemDecoration(10));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

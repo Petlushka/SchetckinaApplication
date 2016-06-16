@@ -9,7 +9,7 @@
     tools:showIn="@layout/app_bar_main">
 
     <android.support.design.widget.TabLayout
-        android:background="@drawable/bg_toolbar"
+        android:background="#4a76a4"
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"

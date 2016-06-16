@@ -26,13 +26,11 @@ import com.example.petlushka.schetckinaapplication.data.User;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookActivity;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.squareup.picasso.Picasso;
@@ -41,6 +39,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 import static com.example.petlushka.schetckinaapplication.R.id.drawer_layout;
 
@@ -132,7 +133,10 @@ public class NotesActivity extends AppCompatActivity
             }
         });
         setContentView(R.layout.activity_main);
-
+        /*RealmConfiguration config = new RealmConfiguration.Builder(this).deleteRealmIfMigrationNeeded().build();
+        Realm.setDefaultConfiguration(config);
+        CopyTask myTask = new CopyTask();
+        myTask.execute(this);*/
 
         //   ButterKnife.bind(this);
 
@@ -145,6 +149,7 @@ public class NotesActivity extends AppCompatActivity
         mTabLayout.setupWithViewPager(mViewPager);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(this.getString(R.string.e_contact));
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -164,8 +169,7 @@ public class NotesActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        CopyTask myTask = new CopyTask();
-        myTask.execute(getApplicationContext());
+
 
     }
 
@@ -194,9 +198,7 @@ public class NotesActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }

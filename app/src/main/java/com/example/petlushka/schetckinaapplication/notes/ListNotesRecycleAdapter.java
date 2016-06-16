@@ -44,7 +44,7 @@ public class ListNotesRecycleAdapter extends RecyclerView.Adapter<ListNotesRecyc
     private Realm mRealm;
 
     public ListNotesRecycleAdapter(Context context, int type){
-        //copyToRealM(type, context);
+        copyToRealM(type, context);
 
         mContext = context;
         RealmConfiguration config = new RealmConfiguration.Builder(context).deleteRealmIfMigrationNeeded().build();
@@ -54,28 +54,29 @@ public class ListNotesRecycleAdapter extends RecyclerView.Adapter<ListNotesRecyc
         RealmQuery<Issue> query = null;
         switch(type){
             case 0:
+                Log.d("MyLogs", "type 0");
                 query = mRealm.where(Issue.class).equalTo("state.id", 0)
                         .or().equalTo("state.id", 9)
                         .or().equalTo("state.id", 5)
                         .or().equalTo("state.id", 7)
                         .or().equalTo("state.id", 8);
                 break;
+            case 1:
+                Log.d("MyLogs", "type 1");
+                query = mRealm.where(Issue.class).equalTo("state.id", 10)
+                        .or().equalTo("state.id", 6);
+                break;
             case 2:
+                Log.d("MyLogs", "type 2");
                 query = mRealm.where(Issue.class).equalTo("state.id", 1)
                         .or().equalTo("state.id", 3)
                         .or().equalTo("state.id", 4);
-                break;
-            case 1:
-                query = mRealm.where(Issue.class).equalTo("state.id", 10)
-                        .or().equalTo("state.id", 6);
                 break;
 
         }
 
         mListIssues = query.findAll();
-        for(Issue item: mListIssues){
-          //  Log.d("MyLogs", item.getCategory().getName());
-        }
+
 
     }
 
@@ -150,7 +151,7 @@ public class ListNotesRecycleAdapter extends RecyclerView.Adapter<ListNotesRecyc
         return mListIssues.size();
     }
 
-    /*public static void copyToRealM(int type, Context context){
+    public static void copyToRealM(int type, Context context){
        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://dev-contact.yalantis.com/rest/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -186,7 +187,6 @@ public class ListNotesRecycleAdapter extends RecyclerView.Adapter<ListNotesRecyc
         });
 
     }
-*/
     public interface ItemClickListener{
         public void onClick(int position, View view);
     }

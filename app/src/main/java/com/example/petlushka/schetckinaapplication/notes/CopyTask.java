@@ -39,11 +39,11 @@ public class CopyTask extends AsyncTask<Context, Void, Void>
             @Override
             public void onResponse(Call<List<Issue>> call, Response<List<Issue>> response) {
                 List<Issue> temp = response.body();
-                //RealmConfiguration config = new RealmConfiguration.Builder(mContext).deleteRealmIfMigrationNeeded().build();
-                //Realm.setDefaultConfiguration(config);
+                Log.d("MyLogs", "copy size - " + temp.size());
                 Realm realm = Realm.getDefaultInstance();
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(temp);
+                Log.d("MyLogs", "realm copy ok");
                 realm.cancelTransaction();
             }
 
